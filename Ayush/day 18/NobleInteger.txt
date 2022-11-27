@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Solution {
+
+    public void reverse(int A[],int n)
+    {
+        int start=0;
+        int end=n-1;
+
+        while(start<end)
+        {
+            int temp=A[start];
+            A[start]=A[end];
+            A[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public int solve(int[] A) {
+
+        int n=A.length;
+        Arrays.sort(A);
+        reverse(A, n);
+
+        if(A[0]==0)
+            return 1;
+
+        for(int i=1;i<n;i++)
+        {
+            if(A[i]!=A[i-1] && A[i]==i)
+                return 1;
+        }
+
+        return -1;
+
+    }
+}
