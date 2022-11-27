@@ -1,0 +1,13 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+
+        
+        long currNumber=1;
+
+        for(int i=1;i<=B;i++)
+        {
+            currNumber=((currNumber%C)*(A%C))%C;
+        }
+        return (int)currNumber%C;
+    }
+}

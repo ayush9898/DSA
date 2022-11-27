@@ -1,0 +1,15 @@
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n=A.length;
+        long ans=0;
+        long tenPower=1;
+
+        for(int i=n-1;i>=0;i--)
+        {
+            ans=(ans+((tenPower%B)*(A[i]%B))%B)%B;
+            tenPower=(tenPower*10)%B;
+        }
+
+        return (int)ans%B;
+    }
+}
